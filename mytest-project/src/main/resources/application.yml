@@ -1,0 +1,16 @@
+server:
+  port: 8484
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.11.201:3306/network-ecological?characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC&useSSL=false&testOnBorrow=true
+    username: root
+    password: 123456
+
+logging:
+  level:
+    com.liang.mapper: debug
+  file:
+    path: /cadre/logs
+    name: provider.log
