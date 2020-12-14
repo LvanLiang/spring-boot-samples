@@ -8,9 +8,12 @@ spring:
     username: root
     password: 123456
 
+es:
+  host: 192.168.11.43
+  port: 9200
+
 logging:
   level:
     com.liang.mapper: debug
   file:
-    path: /cadre/logs
-    name: provider.log
+    path: /rocanado/logs/anmz
