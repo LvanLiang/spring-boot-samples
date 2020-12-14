@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohoog.mapper.target.TrsInterviewMapper">
+  <resultMap id="BaseResultMap" type="com.bohoog.entity.TrsInterview">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="modify_date" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="interview_comment" jdbcType="LONGVARCHAR" property="interviewComment" />
+    <result column="delete_content" jdbcType="VARCHAR" property="deleteContent" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="enter_company" jdbcType="VARCHAR" property="enterCompany" />
+    <result column="guests" jdbcType="VARCHAR" property="guests" />
+    <result column="is_auto_publish" jdbcType="VARCHAR" property="isAutoPublish" />
+    <result column="is_need_advance" jdbcType="INTEGER" property="isNeedAdvance" />
+    <result column="is_need_item_memoir" jdbcType="INTEGER" property="isNeedItemMemoir" />
+    <result column="is_public" jdbcType="INTEGER" property="isPublic" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+    <result column="live_url" jdbcType="LONGVARCHAR" property="liveUrl" />
+    <result column="online_company" jdbcType="VARCHAR" property="onlineCompany" />
+    <result column="oper_ip" jdbcType="VARCHAR" property="operIp" />
+    <result column="oper_user" jdbcType="VARCHAR" property="operUser" />
+    <result column="propaganda" jdbcType="VARCHAR" property="propaganda" />
+    <result column="record_audio_url" jdbcType="VARCHAR" property="recordAudioUrl" />
+    <result column="record_video_url" jdbcType="VARCHAR" property="recordVideoUrl" />
+    <result column="site_id" jdbcType="BIGINT" property="siteId" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="invalid_time" jdbcType="TIMESTAMP" property="invalidTime" />
+    <result column="sort_order" jdbcType="INTEGER" property="sortOrder" />
+    <result column="sort_top_order" jdbcType="INTEGER" property="sortTopOrder" />
+    <result column="top_type" jdbcType="INTEGER" property="topType" />
+    <result column="category" jdbcType="INTEGER" property="category" />
+    <result column="ex_link" jdbcType="VARCHAR" property="exLink" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, create_date, modify_date, interview_comment, delete_content, end_time, enter_company,
+    guests, is_auto_publish, is_need_advance, is_need_item_memoir, is_public, keyword, 
+    live_url, online_company, oper_ip, oper_user, propaganda, record_audio_url, record_video_url, 
+    site_id, start_time, `status`, title, `type`, invalid_time, sort_order, sort_top_order, 
+    top_type, category, ex_link
+  </sql>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.bohoog.entity.TrsInterview" useGeneratedKeys="true">
+    insert into trs_interview
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="modifyDate != null">
+        modify_date,
+      </if>
+      <if test="interviewComment != null">
+        interview_comment,
+      </if>
+      <if test="deleteContent != null">
+        delete_content,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="enterCompany != null">
+        enter_company,
+      </if>
+      <if test="guests != null">
+        guests,
+      </if>
+      <if test="isAutoPublish != null">
+        is_auto_publish,
+      </if>
+      <if test="isNeedAdvance != null">
+        is_need_advance,
+      </if>
+      <if test="isNeedItemMemoir != null">
+        is_need_item_memoir,
+      </if>
+      <if test="isPublic != null">
+        is_public,
+      </if>
+      <if test="keyword != null">
+        keyword,
+      </if>
+      <if test="liveUrl != null">
+        live_url,
+      </if>
+      <if test="onlineCompany != null">
+        online_company,
+      </if>
+      <if test="operIp != null">
+        oper_ip,
+      </if>
+      <if test="operUser != null">
+        oper_user,
+      </if>
+      <if test="propaganda != null">
+        propaganda,
+      </if>
+      <if test="recordAudioUrl != null">
+        record_audio_url,
+      </if>
+      <if test="recordVideoUrl != null">
+        record_video_url,
+      </if>
+      <if test="siteId != null">
+        site_id,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="invalidTime != null">
+        invalid_time,
+      </if>
+      <if test="sortOrder != null">
+        sort_order,
+      </if>
+      <if test="sortTopOrder != null">
+        sort_top_order,
+      </if>
+      <if test="topType != null">
+        top_type,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="exLink != null">
+        ex_link,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interviewComment != null">
+        #{interviewComment,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="deleteContent != null">
+        #{deleteContent,jdbcType=VARCHAR},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enterCompany != null">
+        #{enterCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="guests != null">
+        #{guests,jdbcType=VARCHAR},
+      </if>
+      <if test="isAutoPublish != null">
+        #{isAutoPublish,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedAdvance != null">
+        #{isNeedAdvance,jdbcType=INTEGER},
+      </if>
+      <if test="isNeedItemMemoir != null">
+        #{isNeedItemMemoir,jdbcType=INTEGER},
+      </if>
+      <if test="isPublic != null">
+        #{isPublic,jdbcType=INTEGER},
+      </if>
+      <if test="keyword != null">
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="liveUrl != null">
+        #{liveUrl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="onlineCompany != null">
+        #{onlineCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="operIp != null">
+        #{operIp,jdbcType=VARCHAR},
+      </if>
+      <if test="operUser != null">
+        #{operUser,jdbcType=VARCHAR},
+      </if>
+      <if test="propaganda != null">
+        #{propaganda,jdbcType=VARCHAR},
+      </if>
+      <if test="recordAudioUrl != null">
+        #{recordAudioUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="recordVideoUrl != null">
+        #{recordVideoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="invalidTime != null">
+        #{invalidTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sortOrder != null">
+        #{sortOrder,jdbcType=INTEGER},
+      </if>
+      <if test="sortTopOrder != null">
+        #{sortTopOrder,jdbcType=INTEGER},
+      </if>
+      <if test="topType != null">
+        #{topType,jdbcType=INTEGER},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=INTEGER},
+      </if>
+      <if test="exLink != null">
+        #{exLink,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertList" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into trs_interview
+    (create_date, modify_date, interview_comment, delete_content, end_time, enter_company, 
+      guests, is_auto_publish, is_need_advance, is_need_item_memoir, is_public, keyword, 
+      live_url, online_company, oper_ip, oper_user, propaganda, record_audio_url, record_video_url, 
+      site_id, start_time, `status`, title, `type`, invalid_time, sort_order, sort_top_order, 
+      top_type, category, ex_link)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.createDate,jdbcType=TIMESTAMP}, #{item.modifyDate,jdbcType=TIMESTAMP}, #{item.interviewComment,jdbcType=LONGVARCHAR}, 
+        #{item.deleteContent,jdbcType=VARCHAR}, #{item.endTime,jdbcType=TIMESTAMP}, #{item.enterCompany,jdbcType=VARCHAR}, 
+        #{item.guests,jdbcType=VARCHAR}, #{item.isAutoPublish,jdbcType=VARCHAR}, #{item.isNeedAdvance,jdbcType=INTEGER}, 
+        #{item.isNeedItemMemoir,jdbcType=INTEGER}, #{item.isPublic,jdbcType=INTEGER}, #{item.keyword,jdbcType=VARCHAR}, 
+        #{item.liveUrl,jdbcType=LONGVARCHAR}, #{item.onlineCompany,jdbcType=VARCHAR}, #{item.operIp,jdbcType=VARCHAR}, 
+        #{item.operUser,jdbcType=VARCHAR}, #{item.propaganda,jdbcType=VARCHAR}, #{item.recordAudioUrl,jdbcType=VARCHAR}, 
+        #{item.recordVideoUrl,jdbcType=VARCHAR}, #{item.siteId,jdbcType=BIGINT}, #{item.startTime,jdbcType=TIMESTAMP}, 
+        #{item.status,jdbcType=INTEGER}, #{item.title,jdbcType=VARCHAR}, #{item.type,jdbcType=INTEGER}, 
+        #{item.invalidTime,jdbcType=TIMESTAMP}, #{item.sortOrder,jdbcType=INTEGER}, #{item.sortTopOrder,jdbcType=INTEGER}, 
+        #{item.topType,jdbcType=INTEGER}, #{item.category,jdbcType=INTEGER}, #{item.exLink,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+
+</mapper>

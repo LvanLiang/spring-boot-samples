@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohoog.mapper.target.TrsPublicApplicationMapper">
+  <resultMap id="BaseResultMap" type="com.bohoog.entity.TrsPublicApplication">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="apply_type" jdbcType="INTEGER" property="applyType" />
+    <result column="comp_name" jdbcType="VARCHAR" property="compName" />
+    <result column="contact_address" jdbcType="VARCHAR" property="contactAddress" />
+    <result column="contact_person" jdbcType="VARCHAR" property="contactPerson" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="cruser" jdbcType="VARCHAR" property="cruser" />
+    <result column="dept_id" jdbcType="VARCHAR" property="deptId" />
+    <result column="dept_name" jdbcType="VARCHAR" property="deptName" />
+    <result column="doc_num" jdbcType="VARCHAR" property="docNum" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="flow_status" jdbcType="VARCHAR" property="flowStatus" />
+    <result column="id_number" jdbcType="VARCHAR" property="idNumber" />
+    <result column="information_type" jdbcType="INTEGER" property="informationType" />
+    <result column="is_alerted" jdbcType="INTEGER" property="isAlerted" />
+    <result column="is_cancel" jdbcType="INTEGER" property="isCancel" />
+    <result column="is_send_msg" jdbcType="INTEGER" property="isSendMsg" />
+    <result column="is_trush" jdbcType="INTEGER" property="isTrush" />
+    <result column="legal_person" jdbcType="VARCHAR" property="legalPerson" />
+    <result column="legal_personidnumber" jdbcType="VARCHAR" property="legalPersonidnumber" />
+    <result column="license_number" jdbcType="VARCHAR" property="licenseNumber" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="modify_date" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="organization_code" jdbcType="VARCHAR" property="organizationCode" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="result_status" jdbcType="VARCHAR" property="resultStatus" />
+    <result column="serial_num" jdbcType="VARCHAR" property="serialNum" />
+    <result column="site_id" jdbcType="BIGINT" property="siteId" />
+    <result column="social_credit_code" jdbcType="VARCHAR" property="socialCreditCode" />
+    <result column="title" jdbcType="LONGVARCHAR" property="title" />
+    <result column="total_deal_day" jdbcType="INTEGER" property="totalDealDay" />
+    <result column="trush_date" jdbcType="TIMESTAMP" property="trushDate" />
+    <result column="trush_reason" jdbcType="VARCHAR" property="trushReason" />
+    <result column="trush_sender_id" jdbcType="INTEGER" property="trushSenderId" />
+    <result column="user_comp" jdbcType="VARCHAR" property="userComp" />
+    <result column="user_type" jdbcType="INTEGER" property="userType" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="zip_code" jdbcType="VARCHAR" property="zipCode" />
+    <result column="are_publish" jdbcType="VARCHAR" property="arePublish" />
+    <result column="is_publish" jdbcType="VARCHAR" property="isPublish" />
+    <result column="net_attach_ids" jdbcType="VARCHAR" property="netAttachIds" />
+    <result column="photo_attach_ids" jdbcType="VARCHAR" property="photoAttachIds" />
+    <result column="query_pwd" jdbcType="VARCHAR" property="queryPwd" />
+    <result column="is_send_email" jdbcType="INTEGER" property="isSendEmail" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="accept_time" jdbcType="TIMESTAMP" property="acceptTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, apply_type, comp_name, contact_address, contact_person, content, create_date,
+    cruser, dept_id, dept_name, doc_num, end_date, flow_status, id_number, information_type, 
+    is_alerted, is_cancel, is_send_msg, is_trush, legal_person, legal_personidnumber, 
+    license_number, mail, modify_date, organization_code, phone, result_status, serial_num, 
+    site_id, social_credit_code, title, total_deal_day, trush_date, trush_reason, trush_sender_id, 
+    user_comp, user_type, username, zip_code, are_publish, is_publish, net_attach_ids, 
+    photo_attach_ids, query_pwd, is_send_email, fax, accept_time
+  </sql>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.bohoog.entity.TrsPublicApplication" useGeneratedKeys="true">
+    insert into trs_public_application
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="applyType != null">
+        apply_type,
+      </if>
+      <if test="compName != null">
+        comp_name,
+      </if>
+      <if test="contactAddress != null">
+        contact_address,
+      </if>
+      <if test="contactPerson != null">
+        contact_person,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="cruser != null">
+        cruser,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="deptName != null">
+        dept_name,
+      </if>
+      <if test="docNum != null">
+        doc_num,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="flowStatus != null">
+        flow_status,
+      </if>
+      <if test="idNumber != null">
+        id_number,
+      </if>
+      <if test="informationType != null">
+        information_type,
+      </if>
+      <if test="isAlerted != null">
+        is_alerted,
+      </if>
+      <if test="isCancel != null">
+        is_cancel,
+      </if>
+      <if test="isSendMsg != null">
+        is_send_msg,
+      </if>
+      <if test="isTrush != null">
+        is_trush,
+      </if>
+      <if test="legalPerson != null">
+        legal_person,
+      </if>
+      <if test="legalPersonidnumber != null">
+        legal_personidnumber,
+      </if>
+      <if test="licenseNumber != null">
+        license_number,
+      </if>
+      <if test="mail != null">
+        mail,
+      </if>
+      <if test="modifyDate != null">
+        modify_date,
+      </if>
+      <if test="organizationCode != null">
+        organization_code,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="resultStatus != null">
+        result_status,
+      </if>
+      <if test="serialNum != null">
+        serial_num,
+      </if>
+      <if test="siteId != null">
+        site_id,
+      </if>
+      <if test="socialCreditCode != null">
+        social_credit_code,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="totalDealDay != null">
+        total_deal_day,
+      </if>
+      <if test="trushDate != null">
+        trush_date,
+      </if>
+      <if test="trushReason != null">
+        trush_reason,
+      </if>
+      <if test="trushSenderId != null">
+        trush_sender_id,
+      </if>
+      <if test="userComp != null">
+        user_comp,
+      </if>
+      <if test="userType != null">
+        user_type,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="zipCode != null">
+        zip_code,
+      </if>
+      <if test="arePublish != null">
+        are_publish,
+      </if>
+      <if test="isPublish != null">
+        is_publish,
+      </if>
+      <if test="netAttachIds != null">
+        net_attach_ids,
+      </if>
+      <if test="photoAttachIds != null">
+        photo_attach_ids,
+      </if>
+      <if test="queryPwd != null">
+        query_pwd,
+      </if>
+      <if test="isSendEmail != null">
+        is_send_email,
+      </if>
+      <if test="fax != null">
+        fax,
+      </if>
+      <if test="acceptTime != null">
+        accept_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="applyType != null">
+        #{applyType,jdbcType=INTEGER},
+      </if>
+      <if test="compName != null">
+        #{compName,jdbcType=VARCHAR},
+      </if>
+      <if test="contactAddress != null">
+        #{contactAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPerson != null">
+        #{contactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cruser != null">
+        #{cruser,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptName != null">
+        #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="docNum != null">
+        #{docNum,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flowStatus != null">
+        #{flowStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="idNumber != null">
+        #{idNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="informationType != null">
+        #{informationType,jdbcType=INTEGER},
+      </if>
+      <if test="isAlerted != null">
+        #{isAlerted,jdbcType=INTEGER},
+      </if>
+      <if test="isCancel != null">
+        #{isCancel,jdbcType=INTEGER},
+      </if>
+      <if test="isSendMsg != null">
+        #{isSendMsg,jdbcType=INTEGER},
+      </if>
+      <if test="isTrush != null">
+        #{isTrush,jdbcType=INTEGER},
+      </if>
+      <if test="legalPerson != null">
+        #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonidnumber != null">
+        #{legalPersonidnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseNumber != null">
+        #{licenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null">
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="organizationCode != null">
+        #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="resultStatus != null">
+        #{resultStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNum != null">
+        #{serialNum,jdbcType=VARCHAR},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="socialCreditCode != null">
+        #{socialCreditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="totalDealDay != null">
+        #{totalDealDay,jdbcType=INTEGER},
+      </if>
+      <if test="trushDate != null">
+        #{trushDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trushReason != null">
+        #{trushReason,jdbcType=VARCHAR},
+      </if>
+      <if test="trushSenderId != null">
+        #{trushSenderId,jdbcType=INTEGER},
+      </if>
+      <if test="userComp != null">
+        #{userComp,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="zipCode != null">
+        #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="arePublish != null">
+        #{arePublish,jdbcType=VARCHAR},
+      </if>
+      <if test="isPublish != null">
+        #{isPublish,jdbcType=VARCHAR},
+      </if>
+      <if test="netAttachIds != null">
+        #{netAttachIds,jdbcType=VARCHAR},
+      </if>
+      <if test="photoAttachIds != null">
+        #{photoAttachIds,jdbcType=VARCHAR},
+      </if>
+      <if test="queryPwd != null">
+        #{queryPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="isSendEmail != null">
+        #{isSendEmail,jdbcType=INTEGER},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptTime != null">
+        #{acceptTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertList" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into trs_public_application
+    (apply_type, comp_name, contact_address, contact_person, content, create_date, cruser, 
+      dept_id, dept_name, doc_num, end_date, flow_status, id_number, information_type, 
+      is_alerted, is_cancel, is_send_msg, is_trush, legal_person, legal_personidnumber, 
+      license_number, mail, modify_date, organization_code, phone, result_status, serial_num, 
+      site_id, social_credit_code, title, total_deal_day, trush_date, trush_reason, trush_sender_id, 
+      user_comp, user_type, username, zip_code, are_publish, is_publish, net_attach_ids, 
+      photo_attach_ids, query_pwd, is_send_email, fax, accept_time)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.applyType,jdbcType=INTEGER}, #{item.compName,jdbcType=VARCHAR}, #{item.contactAddress,jdbcType=VARCHAR}, 
+        #{item.contactPerson,jdbcType=VARCHAR}, #{item.content,jdbcType=LONGVARCHAR}, #{item.createDate,jdbcType=TIMESTAMP}, 
+        #{item.cruser,jdbcType=VARCHAR}, #{item.deptId,jdbcType=VARCHAR}, #{item.deptName,jdbcType=VARCHAR}, 
+        #{item.docNum,jdbcType=VARCHAR}, #{item.endDate,jdbcType=TIMESTAMP}, #{item.flowStatus,jdbcType=VARCHAR}, 
+        #{item.idNumber,jdbcType=VARCHAR}, #{item.informationType,jdbcType=INTEGER}, #{item.isAlerted,jdbcType=INTEGER}, 
+        #{item.isCancel,jdbcType=INTEGER}, #{item.isSendMsg,jdbcType=INTEGER}, #{item.isTrush,jdbcType=INTEGER}, 
+        #{item.legalPerson,jdbcType=VARCHAR}, #{item.legalPersonidnumber,jdbcType=VARCHAR}, 
+        #{item.licenseNumber,jdbcType=VARCHAR}, #{item.mail,jdbcType=VARCHAR}, #{item.modifyDate,jdbcType=TIMESTAMP}, 
+        #{item.organizationCode,jdbcType=VARCHAR}, #{item.phone,jdbcType=VARCHAR}, #{item.resultStatus,jdbcType=VARCHAR}, 
+        #{item.serialNum,jdbcType=VARCHAR}, #{item.siteId,jdbcType=BIGINT}, #{item.socialCreditCode,jdbcType=VARCHAR}, 
+        #{item.title,jdbcType=LONGVARCHAR}, #{item.totalDealDay,jdbcType=INTEGER}, #{item.trushDate,jdbcType=TIMESTAMP}, 
+        #{item.trushReason,jdbcType=VARCHAR}, #{item.trushSenderId,jdbcType=INTEGER}, #{item.userComp,jdbcType=VARCHAR}, 
+        #{item.userType,jdbcType=INTEGER}, #{item.username,jdbcType=VARCHAR}, #{item.zipCode,jdbcType=VARCHAR}, 
+        #{item.arePublish,jdbcType=VARCHAR}, #{item.isPublish,jdbcType=VARCHAR}, #{item.netAttachIds,jdbcType=VARCHAR}, 
+        #{item.photoAttachIds,jdbcType=VARCHAR}, #{item.queryPwd,jdbcType=VARCHAR}, #{item.isSendEmail,jdbcType=INTEGER}, 
+        #{item.fax,jdbcType=VARCHAR}, #{item.acceptTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+</mapper>

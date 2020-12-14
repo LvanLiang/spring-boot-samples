@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohoog.mapper.target.TrsOpinionMapper">
+  <resultMap id="BaseResultMap" type="com.bohoog.entity.TrsOpinion">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="attachs" jdbcType="VARCHAR" property="attachs" />
+    <result column="begin_time" jdbcType="TIMESTAMP" property="beginTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="cr_ip" jdbcType="VARCHAR" property="crIp" />
+    <result column="cr_time" jdbcType="TIMESTAMP" property="crTime" />
+    <result column="cr_user" jdbcType="VARCHAR" property="crUser" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="html_content" jdbcType="LONGVARCHAR" property="htmlContent" />
+    <result column="is_public" jdbcType="INTEGER" property="isPublic" />
+    <result column="oper_ip" jdbcType="VARCHAR" property="operIp" />
+    <result column="oper_time" jdbcType="TIMESTAMP" property="operTime" />
+    <result column="oper_user" jdbcType="VARCHAR" property="operUser" />
+    <result column="opinion_dept" jdbcType="VARCHAR" property="opinionDept" />
+    <result column="opinion_result" jdbcType="LONGVARCHAR" property="opinionResult" />
+    <result column="public_time" jdbcType="TIMESTAMP" property="publicTime" />
+    <result column="public_user" jdbcType="VARCHAR" property="publicUser" />
+    <result column="site_id" jdbcType="BIGINT" property="siteId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="theme" jdbcType="VARCHAR" property="theme" />
+    <result column="thumbnails" jdbcType="VARCHAR" property="thumbnails" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="delreason" jdbcType="VARCHAR" property="delreason" />
+    <result column="invalid_time" jdbcType="TIMESTAMP" property="invalidTime" />
+    <result column="n_order" jdbcType="INTEGER" property="nOrder" />
+    <result column="n_top_order" jdbcType="INTEGER" property="nTopOrder" />
+    <result column="category" jdbcType="INTEGER" property="category" />
+    <result column="ex_link" jdbcType="VARCHAR" property="exLink" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, attachs, begin_time, content, cr_ip, cr_time, cr_user, end_time, html_content,
+    is_public, oper_ip, oper_time, oper_user, opinion_dept, opinion_result, public_time, 
+    public_user, site_id, `status`, theme, thumbnails, `type`, delreason, invalid_time, 
+    n_order, n_top_order, category, ex_link
+  </sql>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.bohoog.entity.TrsOpinion" useGeneratedKeys="true">
+    insert into trs_opinion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="attachs != null">
+        attachs,
+      </if>
+      <if test="beginTime != null">
+        begin_time,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="crIp != null">
+        cr_ip,
+      </if>
+      <if test="crTime != null">
+        cr_time,
+      </if>
+      <if test="crUser != null">
+        cr_user,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="htmlContent != null">
+        html_content,
+      </if>
+      <if test="isPublic != null">
+        is_public,
+      </if>
+      <if test="operIp != null">
+        oper_ip,
+      </if>
+      <if test="operTime != null">
+        oper_time,
+      </if>
+      <if test="operUser != null">
+        oper_user,
+      </if>
+      <if test="opinionDept != null">
+        opinion_dept,
+      </if>
+      <if test="opinionResult != null">
+        opinion_result,
+      </if>
+      <if test="publicTime != null">
+        public_time,
+      </if>
+      <if test="publicUser != null">
+        public_user,
+      </if>
+      <if test="siteId != null">
+        site_id,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="theme != null">
+        theme,
+      </if>
+      <if test="thumbnails != null">
+        thumbnails,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="delreason != null">
+        delreason,
+      </if>
+      <if test="invalidTime != null">
+        invalid_time,
+      </if>
+      <if test="nOrder != null">
+        n_order,
+      </if>
+      <if test="nTopOrder != null">
+        n_top_order,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="exLink != null">
+        ex_link,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="attachs != null">
+        #{attachs,jdbcType=VARCHAR},
+      </if>
+      <if test="beginTime != null">
+        #{beginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="crIp != null">
+        #{crIp,jdbcType=VARCHAR},
+      </if>
+      <if test="crTime != null">
+        #{crTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="crUser != null">
+        #{crUser,jdbcType=VARCHAR},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="htmlContent != null">
+        #{htmlContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="isPublic != null">
+        #{isPublic,jdbcType=INTEGER},
+      </if>
+      <if test="operIp != null">
+        #{operIp,jdbcType=VARCHAR},
+      </if>
+      <if test="operTime != null">
+        #{operTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operUser != null">
+        #{operUser,jdbcType=VARCHAR},
+      </if>
+      <if test="opinionDept != null">
+        #{opinionDept,jdbcType=VARCHAR},
+      </if>
+      <if test="opinionResult != null">
+        #{opinionResult,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="publicTime != null">
+        #{publicTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="publicUser != null">
+        #{publicUser,jdbcType=VARCHAR},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="theme != null">
+        #{theme,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnails != null">
+        #{thumbnails,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="delreason != null">
+        #{delreason,jdbcType=VARCHAR},
+      </if>
+      <if test="invalidTime != null">
+        #{invalidTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nOrder != null">
+        #{nOrder,jdbcType=INTEGER},
+      </if>
+      <if test="nTopOrder != null">
+        #{nTopOrder,jdbcType=INTEGER},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=INTEGER},
+      </if>
+      <if test="exLink != null">
+        #{exLink,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertList" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into trs_opinion
+    (attachs, begin_time, content, cr_ip, cr_time, cr_user, end_time, html_content, is_public, 
+      oper_ip, oper_time, oper_user, opinion_dept, opinion_result, public_time, public_user, 
+      site_id, `status`, theme, thumbnails, `type`, delreason, invalid_time, n_order, 
+      n_top_order, category, ex_link)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.attachs,jdbcType=VARCHAR}, #{item.beginTime,jdbcType=TIMESTAMP}, #{item.content,jdbcType=LONGVARCHAR}, 
+        #{item.crIp,jdbcType=VARCHAR}, #{item.crTime,jdbcType=TIMESTAMP}, #{item.crUser,jdbcType=VARCHAR}, 
+        #{item.endTime,jdbcType=TIMESTAMP}, #{item.htmlContent,jdbcType=LONGVARCHAR}, #{item.isPublic,jdbcType=INTEGER}, 
+        #{item.operIp,jdbcType=VARCHAR}, #{item.operTime,jdbcType=TIMESTAMP}, #{item.operUser,jdbcType=VARCHAR}, 
+        #{item.opinionDept,jdbcType=VARCHAR}, #{item.opinionResult,jdbcType=LONGVARCHAR}, 
+        #{item.publicTime,jdbcType=TIMESTAMP}, #{item.publicUser,jdbcType=VARCHAR}, #{item.siteId,jdbcType=BIGINT}, 
+        #{item.status,jdbcType=INTEGER}, #{item.theme,jdbcType=VARCHAR}, #{item.thumbnails,jdbcType=VARCHAR}, 
+        #{item.type,jdbcType=VARCHAR}, #{item.delreason,jdbcType=VARCHAR}, #{item.invalidTime,jdbcType=TIMESTAMP}, 
+        #{item.nOrder,jdbcType=INTEGER}, #{item.nTopOrder,jdbcType=INTEGER}, #{item.category,jdbcType=INTEGER}, 
+        #{item.exLink,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+
+</mapper>

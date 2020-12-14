@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohoog.mapper.target.TrsGovmsgboxReplyMapper">
+  <resultMap id="BaseResultMap" type="com.bohoog.entity.TrsGovmsgboxReply">
+    <id column="reply_id" jdbcType="BIGINT" property="replyId" />
+    <result column="data_id" jdbcType="BIGINT" property="dataId" />
+    <result column="reply_attachs" jdbcType="VARCHAR" property="replyAttachs" />
+    <result column="replycontent" jdbcType="LONGVARCHAR" property="replycontent" />
+    <result column="replydept" jdbcType="VARCHAR" property="replydept" />
+    <result column="replyip" jdbcType="VARCHAR" property="replyip" />
+    <result column="replytime" jdbcType="TIMESTAMP" property="replytime" />
+    <result column="replytype" jdbcType="INTEGER" property="replytype" />
+    <result column="replyuser" jdbcType="VARCHAR" property="replyuser" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="site_id" jdbcType="BIGINT" property="siteId" />
+    <result column="replyhtmlcontent" jdbcType="LONGVARCHAR" property="replyhtmlcontent" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    reply_id, data_id, reply_attachs, replycontent, replydept, replyip, replytime, replytype,
+    replyuser, score, site_id, replyhtmlcontent
+  </sql>
+
+  <insert id="insert" keyColumn="reply_id" keyProperty="replyId" parameterType="com.bohoog.entity.TrsGovmsgboxReply" useGeneratedKeys="true">
+    insert into trs_govmsgbox_reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dataId != null">
+        data_id,
+      </if>
+      <if test="replyAttachs != null">
+        reply_attachs,
+      </if>
+      <if test="replycontent != null">
+        replycontent,
+      </if>
+      <if test="replydept != null">
+        replydept,
+      </if>
+      <if test="replyip != null">
+        replyip,
+      </if>
+      <if test="replytime != null">
+        replytime,
+      </if>
+      <if test="replytype != null">
+        replytype,
+      </if>
+      <if test="replyuser != null">
+        replyuser,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="siteId != null">
+        site_id,
+      </if>
+      <if test="replyhtmlcontent != null">
+        replyhtmlcontent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dataId != null">
+        #{dataId,jdbcType=BIGINT},
+      </if>
+      <if test="replyAttachs != null">
+        #{replyAttachs,jdbcType=VARCHAR},
+      </if>
+      <if test="replycontent != null">
+        #{replycontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="replydept != null">
+        #{replydept,jdbcType=VARCHAR},
+      </if>
+      <if test="replyip != null">
+        #{replyip,jdbcType=VARCHAR},
+      </if>
+      <if test="replytime != null">
+        #{replytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replytype != null">
+        #{replytype,jdbcType=INTEGER},
+      </if>
+      <if test="replyuser != null">
+        #{replyuser,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="replyhtmlcontent != null">
+        #{replyhtmlcontent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertList" keyColumn="reply_id" keyProperty="replyId" parameterType="map" useGeneratedKeys="true">
+    insert into trs_govmsgbox_reply
+    (data_id, reply_attachs, replycontent, replydept, replyip, replytime, replytype, 
+      replyuser, score, site_id, replyhtmlcontent)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.dataId,jdbcType=BIGINT}, #{item.replyAttachs,jdbcType=VARCHAR}, #{item.replycontent,jdbcType=LONGVARCHAR}, 
+        #{item.replydept,jdbcType=VARCHAR}, #{item.replyip,jdbcType=VARCHAR}, #{item.replytime,jdbcType=TIMESTAMP}, 
+        #{item.replytype,jdbcType=INTEGER}, #{item.replyuser,jdbcType=VARCHAR}, #{item.score,jdbcType=INTEGER}, 
+        #{item.siteId,jdbcType=BIGINT}, #{item.replyhtmlcontent,jdbcType=LONGVARCHAR})
+    </foreach>
+  </insert>
+</mapper>

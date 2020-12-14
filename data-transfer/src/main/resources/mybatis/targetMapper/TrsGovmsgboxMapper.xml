@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohoog.mapper.target.TrsGovmsgboxMapper">
+  <resultMap id="BaseResultMap" type="com.bohoog.entity.TrsGovmsgbox">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="modify_date" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="arepublic" jdbcType="INTEGER" property="arepublic" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="attachs" jdbcType="VARCHAR" property="attachs" />
+    <result column="cardid" jdbcType="VARCHAR" property="cardid" />
+    <result column="cardtype" jdbcType="VARCHAR" property="cardtype" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="crip" jdbcType="VARCHAR" property="crip" />
+    <result column="cruser" jdbcType="VARCHAR" property="cruser" />
+    <result column="dealdeptid" jdbcType="BIGINT" property="dealdeptid" />
+    <result column="dealdeptname" jdbcType="VARCHAR" property="dealdeptname" />
+    <result column="district_code" jdbcType="VARCHAR" property="districtCode" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="finishtime" jdbcType="TIMESTAMP" property="finishtime" />
+    <result column="forward_user_name" jdbcType="VARCHAR" property="forwardUserName" />
+    <result column="govmsgbox_desc" jdbcType="VARCHAR" property="govmsgboxDesc" />
+    <result column="govmsgboxflag" jdbcType="INTEGER" property="govmsgboxflag" />
+    <result column="govmsgboxtype" jdbcType="VARCHAR" property="govmsgboxtype" />
+    <result column="govmsgboxtype1" jdbcType="VARCHAR" property="govmsgboxtype1" />
+    <result column="htmlcontent" jdbcType="LONGVARCHAR" property="htmlcontent" />
+    <result column="is_anonymous" jdbcType="INTEGER" property="isAnonymous" />
+    <result column="isapply" jdbcType="INTEGER" property="isapply" />
+    <result column="is_back" jdbcType="INTEGER" property="isBack" />
+    <result column="is_deadline" jdbcType="INTEGER" property="isDeadline" />
+    <result column="is_magor_msg" jdbcType="INTEGER" property="isMagorMsg" />
+    <result column="ispublic" jdbcType="INTEGER" property="ispublic" />
+    <result column="isreply" jdbcType="INTEGER" property="isreply" />
+    <result column="is_supervise_flag" jdbcType="INTEGER" property="isSuperviseFlag" />
+    <result column="is_union_dept_all_reply" jdbcType="INTEGER" property="isUnionDeptAllReply" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="operip" jdbcType="VARCHAR" property="operip" />
+    <result column="operuser" jdbcType="VARCHAR" property="operuser" />
+    <result column="other_tag" jdbcType="VARCHAR" property="otherTag" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="publictime" jdbcType="TIMESTAMP" property="publictime" />
+    <result column="query_number" jdbcType="VARCHAR" property="queryNumber" />
+    <result column="recommend_tag" jdbcType="VARCHAR" property="recommendTag" />
+    <result column="region" jdbcType="VARCHAR" property="region" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="siteid" jdbcType="BIGINT" property="siteid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="street" jdbcType="VARCHAR" property="street" />
+    <result column="submit_time" jdbcType="TIMESTAMP" property="submitTime" />
+    <result column="thumb_status" jdbcType="INTEGER" property="thumbStatus" />
+    <result column="thumbnails" jdbcType="VARCHAR" property="thumbnails" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="toassign_time" jdbcType="TIMESTAMP" property="toassignTime" />
+    <result column="toexamine_time" jdbcType="TIMESTAMP" property="toexamineTime" />
+    <result column="toreply_time" jdbcType="TIMESTAMP" property="toreplyTime" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="deal_dept_name" jdbcType="VARCHAR" property="dealDeptName" />
+    <result column="external_id" jdbcType="VARCHAR" property="externalId" />
+    <result column="is_anonymous_letter" jdbcType="VARCHAR" property="isAnonymousLetter" />
+    <result column="query_pwd" jdbcType="VARCHAR" property="queryPwd" />
+    <result column="app_id" jdbcType="BIGINT" property="appId" />
+    <result column="initial_app_id" jdbcType="BIGINT" property="initialAppId" />
+    <result column="initial_site_id" jdbcType="BIGINT" property="initialSiteId" />
+    <result column="is_forward" jdbcType="VARCHAR" property="isForward" />
+    <result column="initial_is_public" jdbcType="INTEGER" property="initialIsPublic" />
+    <result column="delay_flag" jdbcType="INTEGER" property="delayFlag" />
+    <result column="is_wait_do_turn_multi_apply" jdbcType="INTEGER" property="isWaitDoTurnMultiApply" />
+    <result column="time_left" jdbcType="INTEGER" property="timeLeft" />
+    <result column="remind" jdbcType="INTEGER" property="remind" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="career" jdbcType="VARCHAR" property="career" />
+    <result column="extra1" jdbcType="VARCHAR" property="extra1" />
+    <result column="extra10" jdbcType="VARCHAR" property="extra10" />
+    <result column="extra2" jdbcType="VARCHAR" property="extra2" />
+    <result column="extra3" jdbcType="VARCHAR" property="extra3" />
+    <result column="extra4" jdbcType="VARCHAR" property="extra4" />
+    <result column="extra5" jdbcType="VARCHAR" property="extra5" />
+    <result column="extra6" jdbcType="VARCHAR" property="extra6" />
+    <result column="extra7" jdbcType="VARCHAR" property="extra7" />
+    <result column="extra8" jdbcType="VARCHAR" property="extra8" />
+    <result column="extra9" jdbcType="VARCHAR" property="extra9" />
+    <result column="native_place" jdbcType="VARCHAR" property="nativePlace" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="dealuserid" jdbcType="BIGINT" property="dealuserid" />
+    <result column="forward_dept_id" jdbcType="BIGINT" property="forwardDeptId" />
+    <result column="examine_dept_id" jdbcType="BIGINT" property="examineDeptId" />
+    <result column="examine_user_id" jdbcType="BIGINT" property="examineUserId" />
+    <result column="last_cooperate_targe_typ" jdbcType="INTEGER" property="lastCooperateTargeTyp" />
+    <result column="handle_time" jdbcType="TIMESTAMP" property="handleTime" />
+    <result column="trash_time" jdbcType="TIMESTAMP" property="trashTime" />
+    <result column="last_reply_time" jdbcType="TIMESTAMP" property="lastReplyTime" />
+    <result column="count_remain_day_start_time" jdbcType="TIMESTAMP" property="countRemainDayStartTime" />
+    <result column="delay_apply_time" jdbcType="TIMESTAMP" property="delayApplyTime" />
+    <result column="total_days" jdbcType="INTEGER" property="totalDays" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, create_date, modify_date, arepublic, area, attachs, cardid, cardtype, city, content,
+    crip, cruser, dealdeptid, dealdeptname, district_code, email, finishtime, forward_user_name, 
+    govmsgbox_desc, govmsgboxflag, govmsgboxtype, govmsgboxtype1, htmlcontent, is_anonymous, 
+    isapply, is_back, is_deadline, is_magor_msg, ispublic, isreply, is_supervise_flag, 
+    is_union_dept_all_reply, `location`, operip, operuser, other_tag, parent_id, phone, 
+    province, publictime, query_number, recommend_tag, region, score, sex, siteid, `status`, 
+    street, submit_time, thumb_status, thumbnails, title, toassign_time, toexamine_time, 
+    toreply_time, username, deal_dept_name, external_id, is_anonymous_letter, query_pwd, 
+    app_id, initial_app_id, initial_site_id, is_forward, initial_is_public, delay_flag, 
+    is_wait_do_turn_multi_apply, time_left, remind, address, career, extra1, extra10, 
+    extra2, extra3, extra4, extra5, extra6, extra7, extra8, extra9, native_place, nick_name, 
+    dealuserid, forward_dept_id, examine_dept_id, examine_user_id, last_cooperate_targe_typ, 
+    handle_time, trash_time, last_reply_time, count_remain_day_start_time, delay_apply_time,total_days
+  </sql>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.bohoog.entity.TrsGovmsgbox" useGeneratedKeys="true">
+    insert into trs_govmsgbox
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="modifyDate != null">
+        modify_date,
+      </if>
+      <if test="arepublic != null">
+        arepublic,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="attachs != null">
+        attachs,
+      </if>
+      <if test="cardid != null">
+        cardid,
+      </if>
+      <if test="cardtype != null">
+        cardtype,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="crip != null">
+        crip,
+      </if>
+      <if test="cruser != null">
+        cruser,
+      </if>
+      <if test="dealdeptid != null">
+        dealdeptid,
+      </if>
+      <if test="dealdeptname != null">
+        dealdeptname,
+      </if>
+      <if test="districtCode != null">
+        district_code,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="finishtime != null">
+        finishtime,
+      </if>
+      <if test="forwardUserName != null">
+        forward_user_name,
+      </if>
+      <if test="govmsgboxDesc != null">
+        govmsgbox_desc,
+      </if>
+      <if test="govmsgboxflag != null">
+        govmsgboxflag,
+      </if>
+      <if test="govmsgboxtype != null">
+        govmsgboxtype,
+      </if>
+      <if test="govmsgboxtype1 != null">
+        govmsgboxtype1,
+      </if>
+      <if test="htmlcontent != null">
+        htmlcontent,
+      </if>
+      <if test="isAnonymous != null">
+        is_anonymous,
+      </if>
+      <if test="isapply != null">
+        isapply,
+      </if>
+      <if test="isBack != null">
+        is_back,
+      </if>
+      <if test="isDeadline != null">
+        is_deadline,
+      </if>
+      <if test="isMagorMsg != null">
+        is_magor_msg,
+      </if>
+      <if test="ispublic != null">
+        ispublic,
+      </if>
+      <if test="isreply != null">
+        isreply,
+      </if>
+      <if test="isSuperviseFlag != null">
+        is_supervise_flag,
+      </if>
+      <if test="isUnionDeptAllReply != null">
+        is_union_dept_all_reply,
+      </if>
+      <if test="location != null">
+        `location`,
+      </if>
+      <if test="operip != null">
+        operip,
+      </if>
+      <if test="operuser != null">
+        operuser,
+      </if>
+      <if test="otherTag != null">
+        other_tag,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="publictime != null">
+        publictime,
+      </if>
+      <if test="queryNumber != null">
+        query_number,
+      </if>
+      <if test="recommendTag != null">
+        recommend_tag,
+      </if>
+      <if test="region != null">
+        region,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="siteid != null">
+        siteid,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="street != null">
+        street,
+      </if>
+      <if test="submitTime != null">
+        submit_time,
+      </if>
+      <if test="thumbStatus != null">
+        thumb_status,
+      </if>
+      <if test="thumbnails != null">
+        thumbnails,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="toassignTime != null">
+        toassign_time,
+      </if>
+      <if test="toexamineTime != null">
+        toexamine_time,
+      </if>
+      <if test="toreplyTime != null">
+        toreply_time,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="dealDeptName != null">
+        deal_dept_name,
+      </if>
+      <if test="externalId != null">
+        external_id,
+      </if>
+      <if test="isAnonymousLetter != null">
+        is_anonymous_letter,
+      </if>
+      <if test="queryPwd != null">
+        query_pwd,
+      </if>
+      <if test="appId != null">
+        app_id,
+      </if>
+      <if test="initialAppId != null">
+        initial_app_id,
+      </if>
+      <if test="initialSiteId != null">
+        initial_site_id,
+      </if>
+      <if test="isForward != null">
+        is_forward,
+      </if>
+      <if test="initialIsPublic != null">
+        initial_is_public,
+      </if>
+      <if test="delayFlag != null">
+        delay_flag,
+      </if>
+      <if test="isWaitDoTurnMultiApply != null">
+        is_wait_do_turn_multi_apply,
+      </if>
+      <if test="timeLeft != null">
+        time_left,
+      </if>
+      <if test="remind != null">
+        remind,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="career != null">
+        career,
+      </if>
+      <if test="extra1 != null">
+        extra1,
+      </if>
+      <if test="extra10 != null">
+        extra10,
+      </if>
+      <if test="extra2 != null">
+        extra2,
+      </if>
+      <if test="extra3 != null">
+        extra3,
+      </if>
+      <if test="extra4 != null">
+        extra4,
+      </if>
+      <if test="extra5 != null">
+        extra5,
+      </if>
+      <if test="extra6 != null">
+        extra6,
+      </if>
+      <if test="extra7 != null">
+        extra7,
+      </if>
+      <if test="extra8 != null">
+        extra8,
+      </if>
+      <if test="extra9 != null">
+        extra9,
+      </if>
+      <if test="nativePlace != null">
+        native_place,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="dealuserid != null">
+        dealuserid,
+      </if>
+      <if test="forwardDeptId != null">
+        forward_dept_id,
+      </if>
+      <if test="examineDeptId != null">
+        examine_dept_id,
+      </if>
+      <if test="examineUserId != null">
+        examine_user_id,
+      </if>
+      <if test="lastCooperateTargeTyp != null">
+        last_cooperate_targe_typ,
+      </if>
+      <if test="handleTime != null">
+        handle_time,
+      </if>
+      <if test="trashTime != null">
+        trash_time,
+      </if>
+      <if test="lastReplyTime != null">
+        last_reply_time,
+      </if>
+      <if test="countRemainDayStartTime != null">
+        count_remain_day_start_time,
+      </if>
+      <if test="delayApplyTime != null">
+        delay_apply_time,
+      </if>
+      <if test="totalDays != null">
+        total_days,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="arepublic != null">
+        #{arepublic,jdbcType=INTEGER},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="attachs != null">
+        #{attachs,jdbcType=VARCHAR},
+      </if>
+      <if test="cardid != null">
+        #{cardid,jdbcType=VARCHAR},
+      </if>
+      <if test="cardtype != null">
+        #{cardtype,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="crip != null">
+        #{crip,jdbcType=VARCHAR},
+      </if>
+      <if test="cruser != null">
+        #{cruser,jdbcType=VARCHAR},
+      </if>
+      <if test="dealdeptid != null">
+        #{dealdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="dealdeptname != null">
+        #{dealdeptname,jdbcType=VARCHAR},
+      </if>
+      <if test="districtCode != null">
+        #{districtCode,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="finishtime != null">
+        #{finishtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="forwardUserName != null">
+        #{forwardUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="govmsgboxDesc != null">
+        #{govmsgboxDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="govmsgboxflag != null">
+        #{govmsgboxflag,jdbcType=INTEGER},
+      </if>
+      <if test="govmsgboxtype != null">
+        #{govmsgboxtype,jdbcType=VARCHAR},
+      </if>
+      <if test="govmsgboxtype1 != null">
+        #{govmsgboxtype1,jdbcType=VARCHAR},
+      </if>
+      <if test="htmlcontent != null">
+        #{htmlcontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="isAnonymous != null">
+        #{isAnonymous,jdbcType=INTEGER},
+      </if>
+      <if test="isapply != null">
+        #{isapply,jdbcType=INTEGER},
+      </if>
+      <if test="isBack != null">
+        #{isBack,jdbcType=INTEGER},
+      </if>
+      <if test="isDeadline != null">
+        #{isDeadline,jdbcType=INTEGER},
+      </if>
+      <if test="isMagorMsg != null">
+        #{isMagorMsg,jdbcType=INTEGER},
+      </if>
+      <if test="ispublic != null">
+        #{ispublic,jdbcType=INTEGER},
+      </if>
+      <if test="isreply != null">
+        #{isreply,jdbcType=INTEGER},
+      </if>
+      <if test="isSuperviseFlag != null">
+        #{isSuperviseFlag,jdbcType=INTEGER},
+      </if>
+      <if test="isUnionDeptAllReply != null">
+        #{isUnionDeptAllReply,jdbcType=INTEGER},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="operip != null">
+        #{operip,jdbcType=VARCHAR},
+      </if>
+      <if test="operuser != null">
+        #{operuser,jdbcType=VARCHAR},
+      </if>
+      <if test="otherTag != null">
+        #{otherTag,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="publictime != null">
+        #{publictime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="queryNumber != null">
+        #{queryNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="recommendTag != null">
+        #{recommendTag,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="siteid != null">
+        #{siteid,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="street != null">
+        #{street,jdbcType=VARCHAR},
+      </if>
+      <if test="submitTime != null">
+        #{submitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="thumbStatus != null">
+        #{thumbStatus,jdbcType=INTEGER},
+      </if>
+      <if test="thumbnails != null">
+        #{thumbnails,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="toassignTime != null">
+        #{toassignTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="toexamineTime != null">
+        #{toexamineTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="toreplyTime != null">
+        #{toreplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="dealDeptName != null">
+        #{dealDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="externalId != null">
+        #{externalId,jdbcType=VARCHAR},
+      </if>
+      <if test="isAnonymousLetter != null">
+        #{isAnonymousLetter,jdbcType=VARCHAR},
+      </if>
+      <if test="queryPwd != null">
+        #{queryPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="appId != null">
+        #{appId,jdbcType=BIGINT},
+      </if>
+      <if test="initialAppId != null">
+        #{initialAppId,jdbcType=BIGINT},
+      </if>
+      <if test="initialSiteId != null">
+        #{initialSiteId,jdbcType=BIGINT},
+      </if>
+      <if test="isForward != null">
+        #{isForward,jdbcType=VARCHAR},
+      </if>
+      <if test="initialIsPublic != null">
+        #{initialIsPublic,jdbcType=INTEGER},
+      </if>
+      <if test="delayFlag != null">
+        #{delayFlag,jdbcType=INTEGER},
+      </if>
+      <if test="isWaitDoTurnMultiApply != null">
+        #{isWaitDoTurnMultiApply,jdbcType=INTEGER},
+      </if>
+      <if test="timeLeft != null">
+        #{timeLeft,jdbcType=INTEGER},
+      </if>
+      <if test="remind != null">
+        #{remind,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="career != null">
+        #{career,jdbcType=VARCHAR},
+      </if>
+      <if test="extra1 != null">
+        #{extra1,jdbcType=VARCHAR},
+      </if>
+      <if test="extra10 != null">
+        #{extra10,jdbcType=VARCHAR},
+      </if>
+      <if test="extra2 != null">
+        #{extra2,jdbcType=VARCHAR},
+      </if>
+      <if test="extra3 != null">
+        #{extra3,jdbcType=VARCHAR},
+      </if>
+      <if test="extra4 != null">
+        #{extra4,jdbcType=VARCHAR},
+      </if>
+      <if test="extra5 != null">
+        #{extra5,jdbcType=VARCHAR},
+      </if>
+      <if test="extra6 != null">
+        #{extra6,jdbcType=VARCHAR},
+      </if>
+      <if test="extra7 != null">
+        #{extra7,jdbcType=VARCHAR},
+      </if>
+      <if test="extra8 != null">
+        #{extra8,jdbcType=VARCHAR},
+      </if>
+      <if test="extra9 != null">
+        #{extra9,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null">
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="dealuserid != null">
+        #{dealuserid,jdbcType=BIGINT},
+      </if>
+      <if test="forwardDeptId != null">
+        #{forwardDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="examineDeptId != null">
+        #{examineDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="examineUserId != null">
+        #{examineUserId,jdbcType=BIGINT},
+      </if>
+      <if test="lastCooperateTargeTyp != null">
+        #{lastCooperateTargeTyp,jdbcType=INTEGER},
+      </if>
+      <if test="handleTime != null">
+        #{handleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trashTime != null">
+        #{trashTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastReplyTime != null">
+        #{lastReplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="countRemainDayStartTime != null">
+        #{countRemainDayStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delayApplyTime != null">
+        #{delayApplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalDays != null">
+        #{totalDays,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertList" keyColumn="id" keyProperty="id" parameterType="com.bohoog.entity.TrsGovmsgbox" useGeneratedKeys="true">
+    insert into trs_govmsgbox
+    (create_date, modify_date, arepublic, area, attachs, cardid, cardtype, city, content, 
+      crip, cruser, dealdeptid, dealdeptname, district_code, email, finishtime, forward_user_name, 
+      govmsgbox_desc, govmsgboxflag, govmsgboxtype, govmsgboxtype1, htmlcontent, is_anonymous, 
+      isapply, is_back, is_deadline, is_magor_msg, ispublic, isreply, is_supervise_flag, 
+      is_union_dept_all_reply, `location`, operip, operuser, other_tag, parent_id, phone, 
+      province, publictime, query_number, recommend_tag, region, score, sex, siteid, 
+      `status`, street, submit_time, thumb_status, thumbnails, title, toassign_time, 
+      toexamine_time, toreply_time, username, deal_dept_name, external_id, is_anonymous_letter, 
+      query_pwd, app_id, initial_app_id, initial_site_id, is_forward, initial_is_public, 
+      delay_flag, is_wait_do_turn_multi_apply, time_left, remind, address, career, extra1, 
+      extra10, extra2, extra3, extra4, extra5, extra6, extra7, extra8, extra9, native_place, 
+      nick_name, dealuserid, forward_dept_id, examine_dept_id, examine_user_id, last_cooperate_targe_typ, 
+      handle_time, trash_time, last_reply_time, count_remain_day_start_time, delay_apply_time, 
+      total_days)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.createDate,jdbcType=TIMESTAMP}, #{item.modifyDate,jdbcType=TIMESTAMP}, #{item.arepublic,jdbcType=INTEGER}, 
+        #{item.area,jdbcType=VARCHAR}, #{item.attachs,jdbcType=VARCHAR}, #{item.cardid,jdbcType=VARCHAR}, 
+        #{item.cardtype,jdbcType=VARCHAR}, #{item.city,jdbcType=VARCHAR}, #{item.content,jdbcType=LONGVARCHAR}, 
+        #{item.crip,jdbcType=VARCHAR}, #{item.cruser,jdbcType=VARCHAR}, #{item.dealdeptid,jdbcType=BIGINT}, 
+        #{item.dealdeptname,jdbcType=VARCHAR}, #{item.districtCode,jdbcType=VARCHAR}, #{item.email,jdbcType=VARCHAR}, 
+        #{item.finishtime,jdbcType=TIMESTAMP}, #{item.forwardUserName,jdbcType=VARCHAR}, 
+        #{item.govmsgboxDesc,jdbcType=VARCHAR}, #{item.govmsgboxflag,jdbcType=INTEGER}, 
+        #{item.govmsgboxtype,jdbcType=VARCHAR}, #{item.govmsgboxtype1,jdbcType=VARCHAR}, 
+        #{item.htmlcontent,jdbcType=LONGVARCHAR}, #{item.isAnonymous,jdbcType=INTEGER}, 
+        #{item.isapply,jdbcType=INTEGER}, #{item.isBack,jdbcType=INTEGER}, #{item.isDeadline,jdbcType=INTEGER}, 
+        #{item.isMagorMsg,jdbcType=INTEGER}, #{item.ispublic,jdbcType=INTEGER}, #{item.isreply,jdbcType=INTEGER}, 
+        #{item.isSuperviseFlag,jdbcType=INTEGER}, #{item.isUnionDeptAllReply,jdbcType=INTEGER}, 
+        #{item.location,jdbcType=VARCHAR}, #{item.operip,jdbcType=VARCHAR}, #{item.operuser,jdbcType=VARCHAR}, 
+        #{item.otherTag,jdbcType=VARCHAR}, #{item.parentId,jdbcType=BIGINT}, #{item.phone,jdbcType=VARCHAR}, 
+        #{item.province,jdbcType=VARCHAR}, #{item.publictime,jdbcType=TIMESTAMP}, #{item.queryNumber,jdbcType=VARCHAR}, 
+        #{item.recommendTag,jdbcType=VARCHAR}, #{item.region,jdbcType=VARCHAR}, #{item.score,jdbcType=INTEGER}, 
+        #{item.sex,jdbcType=INTEGER}, #{item.siteid,jdbcType=BIGINT}, #{item.status,jdbcType=INTEGER}, 
+        #{item.street,jdbcType=VARCHAR}, #{item.submitTime,jdbcType=TIMESTAMP}, #{item.thumbStatus,jdbcType=INTEGER}, 
+        #{item.thumbnails,jdbcType=VARCHAR}, #{item.title,jdbcType=VARCHAR}, #{item.toassignTime,jdbcType=TIMESTAMP}, 
+        #{item.toexamineTime,jdbcType=TIMESTAMP}, #{item.toreplyTime,jdbcType=TIMESTAMP}, 
+        #{item.username,jdbcType=VARCHAR}, #{item.dealDeptName,jdbcType=VARCHAR}, #{item.externalId,jdbcType=VARCHAR}, 
+        #{item.isAnonymousLetter,jdbcType=VARCHAR}, #{item.queryPwd,jdbcType=VARCHAR}, 
+        #{item.appId,jdbcType=BIGINT}, #{item.initialAppId,jdbcType=BIGINT}, #{item.initialSiteId,jdbcType=BIGINT}, 
+        #{item.isForward,jdbcType=VARCHAR}, #{item.initialIsPublic,jdbcType=INTEGER}, #{item.delayFlag,jdbcType=INTEGER}, 
+        #{item.isWaitDoTurnMultiApply,jdbcType=INTEGER}, #{item.timeLeft,jdbcType=INTEGER}, 
+        #{item.remind,jdbcType=INTEGER}, #{item.address,jdbcType=VARCHAR}, #{item.career,jdbcType=VARCHAR}, 
+        #{item.extra1,jdbcType=VARCHAR}, #{item.extra10,jdbcType=VARCHAR}, #{item.extra2,jdbcType=VARCHAR}, 
+        #{item.extra3,jdbcType=VARCHAR}, #{item.extra4,jdbcType=VARCHAR}, #{item.extra5,jdbcType=VARCHAR}, 
+        #{item.extra6,jdbcType=VARCHAR}, #{item.extra7,jdbcType=VARCHAR}, #{item.extra8,jdbcType=VARCHAR}, 
+        #{item.extra9,jdbcType=VARCHAR}, #{item.nativePlace,jdbcType=VARCHAR}, #{item.nickName,jdbcType=VARCHAR}, 
+        #{item.dealuserid,jdbcType=BIGINT}, #{item.forwardDeptId,jdbcType=BIGINT}, #{item.examineDeptId,jdbcType=BIGINT}, 
+        #{item.examineUserId,jdbcType=BIGINT}, #{item.lastCooperateTargeTyp,jdbcType=INTEGER}, 
+        #{item.handleTime,jdbcType=TIMESTAMP}, #{item.trashTime,jdbcType=TIMESTAMP}, #{item.lastReplyTime,jdbcType=TIMESTAMP}, 
+        #{item.countRemainDayStartTime,jdbcType=TIMESTAMP}, #{item.delayApplyTime,jdbcType=TIMESTAMP}, 
+        #{item.totalDays,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+
+  <insert id="insertReply" keyColumn="reply_id" keyProperty="replyId" parameterType="com.bohoog.entity.TrsGovmsgboxReply" useGeneratedKeys="true">
+      insert into trs_govmsgbox_reply
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="dataId != null">
+          data_id,
+        </if>
+        <if test="replyAttachs != null">
+          reply_attachs,
+        </if>
+        <if test="replycontent != null">
+          replycontent,
+        </if>
+        <if test="replydept != null">
+          replydept,
+        </if>
+        <if test="replyip != null">
+          replyip,
+        </if>
+        <if test="replytime != null">
+          replytime,
+        </if>
+        <if test="replytype != null">
+          replytype,
+        </if>
+        <if test="replyuser != null">
+          replyuser,
+        </if>
+        <if test="score != null">
+          score,
+        </if>
+        <if test="siteId != null">
+          site_id,
+        </if>
+        <if test="replyhtmlcontent != null">
+          replyhtmlcontent,
+        </if>
+      </trim>
+      <trim prefix="values (" suffix=")" suffixOverrides=",">
+        <if test="dataId != null">
+          #{dataId,jdbcType=BIGINT},
+        </if>
+        <if test="replyAttachs != null">
+          #{replyAttachs,jdbcType=VARCHAR},
+        </if>
+        <if test="replycontent != null">
+          #{replycontent,jdbcType=LONGVARCHAR},
+        </if>
+        <if test="replydept != null">
+          #{replydept,jdbcType=VARCHAR},
+        </if>
+        <if test="replyip != null">
+          #{replyip,jdbcType=VARCHAR},
+        </if>
+        <if test="replytime != null">
+          #{replytime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="replytype != null">
+          #{replytype,jdbcType=INTEGER},
+        </if>
+        <if test="replyuser != null">
+          #{replyuser,jdbcType=VARCHAR},
+        </if>
+        <if test="score != null">
+          #{score,jdbcType=INTEGER},
+        </if>
+        <if test="siteId != null">
+          #{siteId,jdbcType=BIGINT},
+        </if>
+        <if test="replyhtmlcontent != null">
+          #{replyhtmlcontent,jdbcType=LONGVARCHAR},
+        </if>
+      </trim>
+    </insert>
+
+
+</mapper>

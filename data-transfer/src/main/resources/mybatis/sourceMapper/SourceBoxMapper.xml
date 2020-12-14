@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohoog.mapper.source.SourceBoxMapper">
+
+    <select id="getRowsCount" resultType="java.lang.Long">
+        select count(id) from ${tableName}
+    </select>
+
+    <select id="listZyskxjsjBox" resultType="com.bohoog.entity.TrsGovmsgbox">
+        select title, ctime createDate, username cruser, email, ip crip, content, replyUser,reply, utime replyTime
+        from kjj_guestbook
+        order by ctime desc;
+    </select>
+
+    <select id="listZysrlzyBox" resultType="com.bohoog.entity.TrsGovmsgbox">
+      select ORG dealdeptname, SUBJECT title, AUTHOR cruser, SEX_AUTHOR + 1 sex,
+      MOBILE phone, EMAIL email, ADDR address,CONTENT content, COMPLAINTS_DATE createDate,
+      ANSWER reply, ANSWER_MEN replyUser,ANSWER_TIME replyTime,
+      case ISCHECKED when '3' THEN '1' ELSE '0' end as arepublic,
+      case ISCHECKED when '3' THEN '7'  when '0' then '3' ELSE '4' end as status
+      from complaints
+    </select>
+
+    <select id="listRjBox" resultType="com.bohoog.entity.TrsGovmsgbox">
+
+    </select>
+
+
+    <select id="listQxnBox" resultType="com.bohoog.entity.TrsGovmsgbox">
+        select title,
+    </select>
+
+</mapper>

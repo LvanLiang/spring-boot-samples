@@ -11,6 +11,7 @@
     <modules>
         <module>apache-shardingsphere</module>
         <module>mytest-project</module>
+        <module>data-transfer</module>
     </modules>
 
     <properties>

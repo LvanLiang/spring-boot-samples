@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bohoog.mapper.target.TrsSurveyMapper">
+  <resultMap id="BaseResultMap" type="com.bohoog.entity.TrsSurvey">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="appid" jdbcType="BIGINT" property="appid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="cr_time" jdbcType="TIMESTAMP" property="crTime" />
+    <result column="cr_user_id" jdbcType="VARCHAR" property="crUserId" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="moduleid" jdbcType="BIGINT" property="moduleid" />
+    <result column="op_ip" jdbcType="VARCHAR" property="opIp" />
+    <result column="op_time" jdbcType="TIMESTAMP" property="opTime" />
+    <result column="op_user_id" jdbcType="VARCHAR" property="opUserId" />
+    <result column="op_user_name" jdbcType="VARCHAR" property="opUserName" />
+    <result column="prefix" jdbcType="LONGVARCHAR" property="prefix" />
+    <result column="public_time" jdbcType="TIMESTAMP" property="publicTime" />
+    <result column="siteid" jdbcType="BIGINT" property="siteid" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="title" jdbcType="LONGVARCHAR" property="title" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="visit_count" jdbcType="INTEGER" property="visitCount" />
+    <result column="limit_ip" jdbcType="VARCHAR" property="limitIp" />
+    <result column="limit_num" jdbcType="VARCHAR" property="limitNum" />
+    <result column="show_result" jdbcType="VARCHAR" property="showResult" />
+    <result column="invalid_time" jdbcType="TIMESTAMP" property="invalidTime" />
+    <result column="n_order" jdbcType="INTEGER" property="nOrder" />
+    <result column="n_top_order" jdbcType="INTEGER" property="nTopOrder" />
+    <result column="category" jdbcType="INTEGER" property="category" />
+    <result column="ex_link" jdbcType="VARCHAR" property="exLink" />
+    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, appid, `count`, cr_time, cr_user_id, end_time, moduleid, op_ip, op_time, op_user_id,
+    op_user_name, `prefix`, public_time, siteid, start_time, `status`, title, url, visit_count, 
+    limit_ip, limit_num, show_result, invalid_time, n_order, n_top_order, category, ex_link, 
+    end_date
+  </sql>
+
+  <insert id="insert" parameterType="com.bohoog.entity.TrsSurvey">
+    insert into trs_survey
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="appid != null">
+        appid,
+      </if>
+      <if test="count != null">
+        `count`,
+      </if>
+      <if test="crTime != null">
+        cr_time,
+      </if>
+      <if test="crUserId != null">
+        cr_user_id,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="moduleid != null">
+        moduleid,
+      </if>
+      <if test="opIp != null">
+        op_ip,
+      </if>
+      <if test="opTime != null">
+        op_time,
+      </if>
+      <if test="opUserId != null">
+        op_user_id,
+      </if>
+      <if test="opUserName != null">
+        op_user_name,
+      </if>
+      <if test="prefix != null">
+        `prefix`,
+      </if>
+      <if test="publicTime != null">
+        public_time,
+      </if>
+      <if test="siteid != null">
+        siteid,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="visitCount != null">
+        visit_count,
+      </if>
+      <if test="limitIp != null">
+        limit_ip,
+      </if>
+      <if test="limitNum != null">
+        limit_num,
+      </if>
+      <if test="showResult != null">
+        show_result,
+      </if>
+      <if test="invalidTime != null">
+        invalid_time,
+      </if>
+      <if test="nOrder != null">
+        n_order,
+      </if>
+      <if test="nTopOrder != null">
+        n_top_order,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="exLink != null">
+        ex_link,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="appid != null">
+        #{appid,jdbcType=BIGINT},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="crTime != null">
+        #{crTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="crUserId != null">
+        #{crUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="moduleid != null">
+        #{moduleid,jdbcType=BIGINT},
+      </if>
+      <if test="opIp != null">
+        #{opIp,jdbcType=VARCHAR},
+      </if>
+      <if test="opTime != null">
+        #{opTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opUserId != null">
+        #{opUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="opUserName != null">
+        #{opUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="prefix != null">
+        #{prefix,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="publicTime != null">
+        #{publicTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="siteid != null">
+        #{siteid,jdbcType=BIGINT},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="visitCount != null">
+        #{visitCount,jdbcType=INTEGER},
+      </if>
+      <if test="limitIp != null">
+        #{limitIp,jdbcType=VARCHAR},
+      </if>
+      <if test="limitNum != null">
+        #{limitNum,jdbcType=VARCHAR},
+      </if>
+      <if test="showResult != null">
+        #{showResult,jdbcType=VARCHAR},
+      </if>
+      <if test="invalidTime != null">
+        #{invalidTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nOrder != null">
+        #{nOrder,jdbcType=INTEGER},
+      </if>
+      <if test="nTopOrder != null">
+        #{nTopOrder,jdbcType=INTEGER},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=INTEGER},
+      </if>
+      <if test="exLink != null">
+        #{exLink,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertList" parameterType="map">
+    insert into trs_survey
+    (id, appid, `count`, cr_time, cr_user_id, end_time, moduleid, op_ip, op_time, op_user_id, 
+      op_user_name, `prefix`, public_time, siteid, start_time, `status`, title, url, 
+      visit_count, limit_ip, limit_num, show_result, invalid_time, n_order, n_top_order, 
+      category, ex_link, end_date)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.appid,jdbcType=BIGINT}, #{item.count,jdbcType=INTEGER}, 
+        #{item.crTime,jdbcType=TIMESTAMP}, #{item.crUserId,jdbcType=VARCHAR}, #{item.endTime,jdbcType=TIMESTAMP}, 
+        #{item.moduleid,jdbcType=BIGINT}, #{item.opIp,jdbcType=VARCHAR}, #{item.opTime,jdbcType=TIMESTAMP}, 
+        #{item.opUserId,jdbcType=VARCHAR}, #{item.opUserName,jdbcType=VARCHAR}, #{item.prefix,jdbcType=LONGVARCHAR}, 
+        #{item.publicTime,jdbcType=TIMESTAMP}, #{item.siteid,jdbcType=BIGINT}, #{item.startTime,jdbcType=TIMESTAMP}, 
+        #{item.status,jdbcType=INTEGER}, #{item.title,jdbcType=LONGVARCHAR}, #{item.url,jdbcType=VARCHAR}, 
+        #{item.visitCount,jdbcType=INTEGER}, #{item.limitIp,jdbcType=VARCHAR}, #{item.limitNum,jdbcType=VARCHAR}, 
+        #{item.showResult,jdbcType=VARCHAR}, #{item.invalidTime,jdbcType=TIMESTAMP}, #{item.nOrder,jdbcType=INTEGER}, 
+        #{item.nTopOrder,jdbcType=INTEGER}, #{item.category,jdbcType=INTEGER}, #{item.exLink,jdbcType=VARCHAR}, 
+        #{item.endDate,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+</mapper>
