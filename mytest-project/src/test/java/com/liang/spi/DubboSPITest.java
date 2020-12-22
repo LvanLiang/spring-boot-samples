@@ -1,4 +1,4 @@
-package com.liang;
+package com.liang.spi;
 
 import com.liang.spi.Robot;
 import org.apache.dubbo.common.extension.ExtensionLoader;

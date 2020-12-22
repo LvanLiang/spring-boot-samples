@@ -1,4 +1,4 @@
-package com.liang;
+package com.liang.es;
 
 import cn.hutool.json.JSONUtil;
 import com.liang.domain.EsAccount;
@@ -28,6 +28,7 @@ import javax.annotation.Resource;
 import java.io.IOException;
 
 /**
+ * 操作索引
  * @author Liangxp
  * @date 2020/12/12 16:33
  */
@@ -41,6 +42,29 @@ public class EsTest {
     @Test
     void contextLoads() {
         log.info("esClient:{}",client);
+    }
+
+    @Test
+    public void searchFilterField() throws IOException {
+        // 1. 创建检索请求
+        SearchRequest searchRequest = new SearchRequest();
+        // 1.1 指定索引
+        searchRequest.indices("bank");
+        // 1.2 构造检索条件
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        searchSourceBuilder.query(QueryBuilders.termQuery("age", 38));
+        log.info("检索条件:{}", searchSourceBuilder);
+        searchRequest.source(searchSourceBuilder);
+        // 2. 执行检索条件
+        SearchResponse search = client.search(searchRequest, RequestOptions.DEFAULT);
+
+        // 3.将检索结果封装为Bean
+        SearchHit[] hits = search.getHits().getHits();
+        for (SearchHit hit : hits) {
+            String sourceAsString = hit.getSourceAsString();
+            EsAccount esAccount = JSONUtil.toBean(sourceAsString, EsAccount.class);
+            log.info("检索结果：{}", esAccount);
+        }
     }
 
 
@@ -97,17 +121,19 @@ public class EsTest {
     @Test
     public void indexData() throws IOException {
         EsUser esUser = new EsUser();
-        esUser.setUserName("天逸的");
-        esUser.setAge(18);
+        esUser.setUserName("随风奔跑是方向");
+        esUser.setAge(22);
         esUser.setGender("男");
         String jsonStr = JSONUtil.toJsonStr(esUser);
         IndexRequest indexRequest = new IndexRequest("users");
         // 设置要保存的内容
         indexRequest.source(jsonStr, XContentType.JSON);
+        indexRequest.id("T2niX3YByGdxsMGHkuoK");
         // 执行创建索引和保存数据
         IndexResponse index = client.index(indexRequest, RequestOptions.DEFAULT);
         DocWriteResponse.Result result = index.getResult();
-        log.info("结果：{}", result);
+        int status = index.status().getStatus();
+        log.info("结果：{},状态：{}", result, status);
     }
 
 }

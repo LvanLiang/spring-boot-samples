@@ -1,6 +1,5 @@
-package com.liang;
+package com.liang.spi;
 
-import com.liang.spi.Robot;
 import com.liang.spi.impl.OptimusPrime;
 import org.junit.Test;
 

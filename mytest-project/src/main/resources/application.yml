@@ -16,4 +16,4 @@ logging:
   level:
     com.liang.mapper: debug
   file:
-    path: /rocanado/logs/anmz
+    path: /mnt/Bohoog/logs/site-api/
