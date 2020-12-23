@@ -1,9 +1,12 @@
 package com.liang.es;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.liang.domain.EsPerson;
 import lombok.extern.slf4j.Slf4j;
+import org.elasticsearch.action.bulk.BulkRequest;
+import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexRequest;
@@ -24,6 +27,7 @@ import java.util.Map;
 
 /**
  * 文档操作
+ *
  * @author Liangxp
  * @date 2020/12/22 16:04
  */
@@ -39,6 +43,33 @@ public class EsTest03Doc {
     private RestHighLevelClient client;
 
     @Test
+    public void bulkCreateDoc() throws IOException {
+        // 1.准备json数据
+        EsPerson person1 = new EsPerson(IdUtil.objectId(), "王五", 25, DateUtil.lastMonth());
+        EsPerson person2 = new EsPerson(IdUtil.objectId(), "赵六", 26, DateUtil.lastWeek());
+        EsPerson person3 = new EsPerson(IdUtil.objectId(), "田七", 27, DateUtil.nextWeek());
+        EsPerson person4 = new EsPerson(IdUtil.objectId(), "王八", 28, DateUtil.nextMonth());
+        String json1 = mapper.writeValueAsString(person1);
+        String json2 = mapper.writeValueAsString(person2);
+        String json3 = mapper.writeValueAsString(person3);
+        String json4 = mapper.writeValueAsString(person4);
+
+        // 2.创建request请求
+        BulkRequest request = new BulkRequest();
+        request.add(new IndexRequest(index).id(person1.getId()).source(json1, XContentType.JSON))
+                .add(new IndexRequest(index).id(person2.getId()).source(json2, XContentType.JSON))
+                .add(new IndexRequest(index).id(person3.getId()).source(json3, XContentType.JSON))
+                .add(new IndexRequest(index).id(person4.getId()).source(json4, XContentType.JSON));
+
+        // 3.使用client执行批量操作文档
+        BulkResponse bulkResponse = client.bulk(request, RequestOptions.DEFAULT);
+
+        // 4.打印执行结果
+        log.info("批量插入结果：{}", bulkResponse.getItems().toString());
+
+    }
+
+    @Test
     public void testDeleteDoc() throws IOException {
         DeleteRequest request = new DeleteRequest(index, "5fe1b2f9d9457dc9a35fc86f");
         DeleteResponse response = client.delete(request, RequestOptions.DEFAULT);
@@ -49,7 +80,7 @@ public class EsTest03Doc {
     public void testUpdateDoc() throws IOException {
         // 1.创建要跟新的Map
         Map<String, Object> docMap = new HashMap<>();
-        docMap.put("name","张三三三");
+        docMap.put("name", "张三三三");
 
         // 2.创建request, 将doc 封装进去
         UpdateRequest request = new UpdateRequest(index, "5fe1b1e2d9456b65995c5ddc");
