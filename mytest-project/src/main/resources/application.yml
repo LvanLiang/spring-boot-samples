@@ -17,3 +17,11 @@ logging:
     com.liang.mapper: debug
   file:
     path: /mnt/Bohoog/logs/site-api/
+
+site:
+  maps: {
+    # 百度
+    123: www.baidu.com,
+    # 搜狐
+    456: www.sohu.com
+  }
