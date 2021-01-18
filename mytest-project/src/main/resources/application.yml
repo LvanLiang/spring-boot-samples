@@ -25,3 +25,7 @@ site:
     # 搜狐
     456: www.sohu.com
   }
+
+
+kill:
+  maps: '{"name": "zhangsan", "sex": "male"}'
