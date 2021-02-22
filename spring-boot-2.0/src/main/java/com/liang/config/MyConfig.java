@@ -24,7 +24,7 @@ public class MyConfig {
      */
     @Bean
     public User user01() {
-        User zhangsan = new User("zhangsan", 18, null);
+        User zhangsan = new User("zhangsan", 18);
         //user组件依赖了Pet组件
         zhangsan.setPet(tomcatPet());
         return zhangsan;
