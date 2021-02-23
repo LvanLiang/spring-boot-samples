@@ -1,6 +1,6 @@
 package com.bohoog.service;
 
-import com.bohoog.mapper.target.TrsInterviewMapper;
+import com.bohoog.mapper.targets.TrsInterviewMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

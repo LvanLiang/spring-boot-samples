@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bohoog.mapper.target.TrsSurveyMapper">
+<mapper namespace="com.bohoog.mapper.targets.TrsSurveyMapper">
   <resultMap id="BaseResultMap" type="com.bohoog.entity.TrsSurvey">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="appid" jdbcType="BIGINT" property="appid" />

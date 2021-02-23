@@ -1,6 +1,6 @@
 package com.bohoog.service;
 
-import com.bohoog.mapper.target.TrsGovmsgboxMapper;
+import com.bohoog.mapper.targets.TrsGovmsgboxMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

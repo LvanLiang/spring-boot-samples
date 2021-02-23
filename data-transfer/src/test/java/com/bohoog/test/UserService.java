@@ -1,7 +1,7 @@
 package com.bohoog.test;
 
 import com.bohoog.mapper.source.SourceUserMapper;
-import com.bohoog.mapper.target.TargetUserMapper;
+import com.bohoog.mapper.targets.TargetUserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

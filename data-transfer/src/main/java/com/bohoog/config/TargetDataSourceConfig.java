@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  * @date 2019/11/20 21:10
  */
 @Configuration
-@MapperScan(basePackages = "com.bohoog.mapper.target", sqlSessionFactoryRef = "targetSqlSessionFactory")
+@MapperScan(basePackages = "com.bohoog.mapper.targets", sqlSessionFactoryRef = "targetSqlSessionFactory")
 public class TargetDataSourceConfig {
 
     /**
