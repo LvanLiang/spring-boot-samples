@@ -1,12 +1,12 @@
 package com.liang;
 
+import com.liang.config.Car;
 import com.liang.config.MyConfig;
 import com.liang.domain.entity.Pet;
 import com.liang.domain.entity.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author Liangxp
@@ -50,5 +50,8 @@ public class SpringBoot2 {
         boolean hehe = run.containsBean("hehe");
         System.out.println("haha："+haha);//true
         System.out.println("hehe："+hehe);//true
+
+        Car car = run.getBean(Car.class);
+        System.out.println("我的车：" + car);
     }
 }
