@@ -2,6 +2,7 @@ package com.liang.config;
 
 import com.liang.domain.entity.Pet;
 import com.liang.domain.entity.User;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,7 +16,8 @@ import org.springframework.context.annotation.Configuration;
  * @author Liangxp
  * @date 2021/02/22 22:19
  */
-@Configuration()
+@Configuration
+@EnableConfigurationProperties(MyCar.class)
 public class MyConfig {
     /**
      *  Full:外部无论对配置类中的这个组件注册方法调用多少次获取的都是之前注册容器中的单实例对象

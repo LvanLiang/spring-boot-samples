@@ -4,9 +4,12 @@ spring:
   mvc:
     static-path-pattern: /res/** # 自己配置了这个会导致welcome page，还有favicon.ico 失效
 
-mycar:
+car:
   brand: bmw
   price: 33000000
+mycar:
+  brand: benchi
+  color: black
 
 name:
   list: lisi,zhangsan,wangwu

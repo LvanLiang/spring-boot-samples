@@ -1,6 +1,7 @@
 package com.liang;
 
 import com.liang.config.Car;
+import com.liang.config.MyCar;
 import com.liang.config.MyConfig;
 import com.liang.domain.entity.Person;
 import com.liang.domain.entity.Pet;
@@ -45,7 +46,10 @@ public class SpringBoot2 {
         Pet tom = run.getBean("tom", Pet.class);
         System.out.println("用户的宠物："+(user01.getPet() == tom));
 
-
+        String[] userBeanNames = run.getBeanNamesForType(User.class);
+        for (String userBeanName : userBeanNames) {
+            System.out.println("userBeanName=" + userBeanName);
+        }
 
         boolean haha = run.containsBean("haha");
         boolean hehe = run.containsBean("hehe");
@@ -53,7 +57,9 @@ public class SpringBoot2 {
         System.out.println("hehe："+hehe);//true
 
         Car car = run.getBean(Car.class);
+        MyCar mycar = run.getBean(MyCar.class);
         System.out.println("我的车：" + car);
+        System.out.println("我的我的车：" + mycar);
 
         // yaml配置各种数据类型
         Person person = run.getBean(Person.class);

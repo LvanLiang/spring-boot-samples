@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "mycar")
+@ConfigurationProperties(prefix = "car")
 public class Car {
     private String brand;
     private Integer price;
