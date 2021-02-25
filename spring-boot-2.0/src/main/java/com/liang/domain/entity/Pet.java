@@ -1,6 +1,5 @@
 package com.liang.domain.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -10,6 +9,8 @@ import lombok.Data;
 @Data
 public class Pet {
     private String name;
+
+    private Double weight;
 
     public Pet() {
     }

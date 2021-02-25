@@ -2,6 +2,7 @@ package com.liang;
 
 import com.liang.config.Car;
 import com.liang.config.MyConfig;
+import com.liang.domain.entity.Person;
 import com.liang.domain.entity.Pet;
 import com.liang.domain.entity.User;
 import org.springframework.boot.SpringApplication;
@@ -53,5 +54,9 @@ public class SpringBoot2 {
 
         Car car = run.getBean(Car.class);
         System.out.println("我的车：" + car);
+
+        // yaml配置各种数据类型
+        Person person = run.getBean(Person.class);
+        System.out.println("person：" + person);
     }
 }
