@@ -1,9 +1,10 @@
 package com.liang.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Rest风格支持（使用HTTP请求方式动词来表示对资源的操作）
@@ -18,6 +19,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @ResponseBody
 public class RestController {
+
+    @GetMapping("/car/{id}/owner/{username}")
+    public Map<String, Object> getParams(@PathVariable("id") Integer id,
+                                         @PathVariable("username") String username,
+                                         @PathVariable Map paraMap,
+                                         @RequestHeader Map<String, String> headerMap,
+                                         @RequestParam("age") Integer age) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", id);
+        map.put("username", username);
+        map.put("pathvariableParam", paraMap);
+        map.put("headerMap", headerMap);
+        return map;
+
+    }
+
     @RequestMapping(value = "/user",method = RequestMethod.GET)
     public String getUser(){
         return "GET-张三";
