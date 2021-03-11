@@ -48,5 +48,17 @@
     <input type="submit" value="提交">
 </form>
 
+
+<h4>测试封装POJO</h4>
+<form action="/test/savePerson" method="post">
+    姓名：<input type="text" name="userName" value="zhangsan"><br/>
+    年龄：<input type="text" name="age" value="18"><br/>
+    生日：<input type="text" name="birth" value="2021-03-10 11:16:24"><br/>
+<!--    宠物姓名：<input type="text" name="pet.name" value="阿猫"><br/>-->
+<!--    宠物体重：<input type="text" name="pet.weight" value="7.7"><br/>-->
+    宠物：<input type="text" name="pet" value="阿狗,6.6"> <br>
+    <input type="submit" value="保存">
+</form>
+
 </body>
 </html>

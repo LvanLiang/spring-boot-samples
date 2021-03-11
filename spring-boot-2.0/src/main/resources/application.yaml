@@ -8,6 +8,11 @@ spring:
     hiddenmethod:
       filter:
         enabled: true  #开启页面表单的Rest功能
+    format:
+      date: yyyy-MM-dd HH:mm:ss
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
 
 car:
   brand: bmw

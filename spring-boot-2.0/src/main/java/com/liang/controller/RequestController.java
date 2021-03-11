@@ -41,6 +41,13 @@ public class RequestController {
         return map;
     }
 
+    /**
+     * HttpServletRequest和HttpServletResponse参数由[ServletRequestMethodArgumentResolver]解析
+     *
+     * Map、Model（map、model里面的数据会被放在request的请求域  request.setAttribute）、Errors/BindingResult、
+     * RedirectAttributes（ 重定向携带数据）、ServletResponse（response）、SessionStatus、UriComponentsBuilder、
+     * ServletUriComponentsBuilder
+     */
     @GetMapping("/param")
     public String getParam(Map<String, Object> map, Model model,
                            HttpServletRequest request, HttpServletResponse response) {
